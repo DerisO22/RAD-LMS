@@ -1,5 +1,3 @@
 node_modules
 dist/
 .env
-services/core/build/
-services/core/.gradle/
