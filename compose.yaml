@@ -1,0 +1,15 @@
+services:
+  web:
+    build: { context: ., dockerfile: services/web/Dockerfile }
+    ports: ["5173:5173"]
+    develop:
+      watch:
+        - { action: sync, path: ./services/web, target: /app/services/web }
+        - { action: rebuild, path: ./services/web/package.json }
+
+  core:
+    build: { context: ./services/core, dockerfile: Dockerfile }
+    ports: ["8080:8080"]
+    develop:
+      watch:
+        - { action: rebuild, path: ./services/core/src }
