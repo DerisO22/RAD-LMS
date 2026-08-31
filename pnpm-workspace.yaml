@@ -1,0 +1,4 @@
+packages:
+  - "services/web"
+  - "services/3d"
+  - "packages/*"
