@@ -1,0 +1,10 @@
+name: web
+on:
+  push: { paths: ['services/web/**'] }
+  pull_request: { paths: ['services/web/**'] }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose build web

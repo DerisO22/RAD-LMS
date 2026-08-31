@@ -1,0 +1,10 @@
+name: core
+on:
+  push: { paths: ['services/core/**'] }
+  pull_request: { paths: ['services/core/**'] }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose run --rm core ./gradlew build
